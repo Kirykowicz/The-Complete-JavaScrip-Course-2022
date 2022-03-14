@@ -49,6 +49,15 @@ const restaurant = {
   },
 };
 
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+for (const item of menu) console.log(item);
+
+for (const item of menu.entries()) {
+  console.log(item);
+}
+
+/* 
 // Coding Challenge
 
 const game = {
@@ -90,9 +99,9 @@ const game = {
     x: 3.25,
     team2: 6.5,
   },
-};
+}; */
 
-//1
+/* //1
 const [players1, players2] = game.players;
 console.log(players1);
 console.log(players2);
@@ -125,7 +134,7 @@ const printGoals = function (...players) {
 };
 
 printGoals('Robert', 'Katie', 'Konrad');
-printGoals(...game.scored);
+printGoals(...game.scored); */
 
 //7
 
@@ -295,7 +304,7 @@ console.log(k);
 const [p = 1, q = 1, r = 1] = [8, 9];
 console.log(p, q, r); */
 
-const contacts = [
+/* const contacts = [
   {
     firstName: 'Akira',
     lastName: 'Laine',
@@ -329,8 +338,9 @@ function LookUpProfile(name, prop) {
     }
   }
   return 'No such contact';
+  f;
 }
 
 const data = LookUpProfile('Harry', 'likes');
 
-console.log(data);
+console.log(data); */
