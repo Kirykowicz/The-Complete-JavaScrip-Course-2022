@@ -54,7 +54,27 @@ const restaurant = {
   },
 };
 
-console.log(restaurant.openingHours.thu);
+const properties = Object.keys(openingHours);
+console.log(properties);
+
+let openStr = `We are open on ${properties.length} days:  `;
+
+for (const day of properties) {
+  openStr += `${day}, `;
+}
+console.log(openStr);
+
+const values = Object.values(openingHours);
+console.log(values);
+
+const entries = Object.entries(openingHours);
+console.log(entries);
+
+for (const [key, { open, close }] of entries) {
+  console.log(`On ${key}, we are open from ${open} to ${close}`);
+}
+
+/* console.log(restaurant.openingHours.thu);
 //console.log(restaurant.openingHours.mon.open);
 console.log(restaurant.openingHours.mon?.open);
 
@@ -66,7 +86,7 @@ for (const day of days) {
 }
 
 console.log(restaurant.order?.(0, 1));
-console.log(restaurant.orderRisotto?.(0, 1));
+console.log(restaurant.orderRisotto?.(0, 1)); */
 
 /* const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 
