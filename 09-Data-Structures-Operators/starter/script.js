@@ -53,8 +53,39 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
+
+// Sets
+
+const ordersSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
+
+console.log(ordersSet);
+
+console.log(new Set('Robert'));
+
+console.log(ordersSet.size);
+console.log(ordersSet.has('Pizza'));
+ordersSet.add('Garlic Bread');
+ordersSet.delete('Risotto');
+console.log(ordersSet);
+//ordersSet.clear();
+//console.log(ordersSet);
+
+for (const order of ordersSet) console.log(order);
+
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+
 // Challenge #2
-const game = {
+/* const game = {
   team1: 'Bayern Munich',
   team2: 'Borrussia Dortmund',
   players: [
@@ -111,7 +142,7 @@ const y = Object.entries(game.odds);
 for (const [team, odd] of y) {
   const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
   console.log(`Odd of ${teamStr}: ${odd}`);
-}
+} */
 // Looping Objects
 /* const properties = Object.keys(openingHours);
 console.log(properties);
