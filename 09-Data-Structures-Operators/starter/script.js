@@ -54,9 +54,49 @@ const restaurant = {
   },
 };
 
-// Maps
+//********* Maps: Iteration ********
 
-const rest = new Map();
+const question = new Map([
+  ['Question', 'What is the best programming language in the world?'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'JavaScript'],
+  ['correct', 3],
+  [true, 'Correct'],
+  [false, 'Try again'],
+]);
+
+const hoursMap = new Map(Object.entries(openingHours));
+
+console.log(question);
+
+console.log(openingHours);
+console.log(hoursMap);
+
+for (const [key, value] of question) {
+  if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+}
+
+const answer = Number(prompt('Your answer'));
+console.log(answer);
+
+if (answer === question.get('correct')) {
+  console.log(question.get(true));
+} else {
+  console.log(question.get(false));
+}
+
+// or write it like this
+
+console.log(question.get(question.get('correct') === answer));
+
+console.log([...question]);
+
+// Convert Map to Array
+
+// ********** Maps ********************
+
+/* const rest = new Map();
 rest.set('name', 'Classico Italiano');
 rest.set(1, 'Firenze Italia');
 console.log(rest.set(2, 'Lisbon Portugal'));
@@ -90,7 +130,7 @@ console.log(rest.get(arr));
 rest.set(document.querySelector('h1'), 'Heading');
 
 console.log(rest);
-
+ */
 // ************* Sets ********************
 
 /* const ordersSet = new Set([
