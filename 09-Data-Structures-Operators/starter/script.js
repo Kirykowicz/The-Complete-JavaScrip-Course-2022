@@ -54,9 +54,38 @@ const restaurant = {
   },
 };
 
+// ****** Working with strings part 1 ******
+
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
+console.log(plane[0]);
+console.log(plane[1]);
+console.log(plane[2]);
+console.log('B737'[0]);
+console.log(airline.length);
+console.log('b737'.length);
+console.log(airline.indexOf('r'));
+console.log(airline.lastIndexOf('r'));
+
+console.log(airline.slice(3));
+console.log(airline.slice(4));
+console.log(airline.slice(airline.indexOf('a')));
+console.log(airline.slice(0, airline.indexOf(' ')));
+console.log(airline.slice(airline.lastIndexOf(' ') + 1));
+console.log(airline.slice(-3));
+
+const checkMiddleSeat = function (seat) {
+  const s =
+    seat.slice(-1) === 'B' || seat.slice(-1) === 'E' ? 'Middle' : 'Not Middle';
+  console.log(s);
+};
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
+
 //***************** Coding Challenge #3 ******
 
-const gameEvents = new Map([
+/* const gameEvents = new Map([
   [17, '⚽️ GOAL'],
   [36, '🔁 Substitution'],
   [47, '⚽️ GOAL'],
@@ -102,7 +131,7 @@ for (const [min, event] of gameEvents) {
 for (const [min, event] of gameEvents) {
   const half = min <= 45 ? 'FIRST' : 'SECOND';
   console.log(`[${half} HALF] ${min}: ${event}`);
-}
+} */
 
 //********* Maps: Iteration ********
 
