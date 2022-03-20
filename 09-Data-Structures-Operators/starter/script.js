@@ -54,9 +54,70 @@ const restaurant = {
   },
 };
 
-// ****** Working with strings part 1 ******
+// ****** Working with strings part 2 ******
 
 const airline = 'TAP Air Portugal';
+
+console.log(airline.toLocaleLowerCase());
+console.log(airline.toLocaleUpperCase());
+console.log('robert'.toLocaleUpperCase());
+
+// Fix capitalization in name
+const passenger = 'jOnAS';
+const passengerLower = passenger.toLocaleLowerCase();
+const passengerCorrect =
+  passengerLower[0].toUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrect);
+
+// Comparing emails
+const email = 'hello@jonas.io';
+const loginEmail = '  Hello@jonas.Io \n';
+const lowerEmail = loginEmail.toLocaleLowerCase();
+const trimmedEmail = lowerEmail.trim();
+console.log(trimmedEmail);
+// or do it this way
+const normalizedEmail = loginEmail.toLocaleLowerCase().trim();
+console.log(normalizedEmail);
+console.log(email === normalizedEmail);
+
+// replacing parts of strings
+
+const priceGB = '288,97£';
+const priceUS = priceGB.replace('£', '$').replace(',', '.');
+console.log(priceUS);
+
+const announcement =
+  'All passengers come to boarding door 23, Boarding door 23';
+
+console.log(announcement.replaceAll('door', 'gate'));
+console.log(announcement.replace(/door/g, 'gate'));
+
+// Booleans
+const plane = 'Airbus A320neo';
+console.log(plane.includes('A320'));
+console.log(plane.includes('Boeing'));
+console.log(plane.startsWith('Air'));
+
+if (plane.startsWith('Airbus') && plane.endsWith('neo')) {
+  console.log('Part of the NEW Airbus family');
+}
+
+// Practice exercise
+const checkBaggage = function (items) {
+  const baggage = items.toLocaleLowerCase();
+  if (baggage.includes('knife') || baggage.includes('gun')) {
+    console.log('You are NOT allowed on board');
+  } else {
+    console.log('Welcome aboard');
+  }
+};
+
+checkBaggage('I have a laptop, some Food and a pocket Knife');
+checkBaggage('Socks and camera');
+checkBaggage('Got some snacks and a gun for protection');
+// ****** Working with strings part 1 ******
+
+/* const airline = 'TAP Air Portugal';
 const plane = 'A320';
 console.log(plane[0]);
 console.log(plane[1]);
@@ -81,7 +142,7 @@ const checkMiddleSeat = function (seat) {
 };
 checkMiddleSeat('11B');
 checkMiddleSeat('23C');
-checkMiddleSeat('3E');
+checkMiddleSeat('3E'); */
 
 //***************** Coding Challenge #3 ******
 
