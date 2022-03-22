@@ -53,9 +53,35 @@ const restaurant = {
     console.log(otherIngredients);
   },
 };
+
+// *********** Coding Challenge #4 ************
+
+/* underscore_case;
+first_name;
+Some_Variable;
+calculate_AGE;
+delayed_departure;
+ */
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
+
+document.querySelector('button').addEventListener('click', function () {
+  const text = document.querySelector('textarea').value;
+  const rows = text.split('\n');
+
+  for (const [i, row] of rows.entries()) {
+    const [first, second] = row.toLowerCase().trim().split('_');
+    const output = `${first}${second.replace(
+      second[0],
+      second[0].toUpperCase()
+    )}`;
+    console.log(`${output.padEnd(20)}${'✅'.repeat(i + 1)}`);
+  }
+});
+
 //******* Working with strings part 3**********
 
-console.log('a+very+nice+string');
+/* console.log('a+very+nice+string');
 console.log('a+very+nice+string'.split('+'));
 console.log('Robert Kirykowicz'.split(' '));
 
@@ -98,7 +124,7 @@ const planesInLine = function (n) {
   console.log(`There are ${n} planes in line ${'🛩'.repeat(n)}`);
 };
 
-planesInLine(7);
+planesInLine(7); */
 
 // ****** Working with strings part 2 ******
 
