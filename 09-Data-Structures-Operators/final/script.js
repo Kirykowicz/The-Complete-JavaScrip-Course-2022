@@ -297,7 +297,7 @@ Let's continue with our football betting app! This time, we have a map with a lo
 GOOD LUCK 😀
 */
 
-const gameEvents = new Map([
+/* const gameEvents = new Map([
   [17, '⚽️ GOAL'],
   [36, '🔁 Substitution'],
   [47, '⚽️ GOAL'],
@@ -309,7 +309,7 @@ const gameEvents = new Map([
   [76, '⚽️ GOAL'],
   [80, '⚽️ GOAL'],
   [92, '🔶 Yellow card'],
-]);
+]); */
 
 /*
 // 1.
