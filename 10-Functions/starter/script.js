@@ -1,8 +1,25 @@
 'use strict';
 
+// --- Functions returning Functions
+
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
+};
+
+const greeterHey = greet('hey');
+greeterHey('Jonas');
+greeterHey('Steven');
+greet('Hello')('Robert');
+
+const greetArr = greeting => name => console.log(`${greeting} ${name}`);
+
+greetArr('Buongiorno')('Jose');
+
 // ----Functions Accepting Callback Functions ----
 
-const oneWord = function (str) {
+/* const oneWord = function (str) {
   return str.replaceAll(' ', '').toLowerCase();
 };
 
@@ -18,7 +35,7 @@ const transformer = function (str, fn) {
 };
 
 transformer('Javascript is the best!', upperFirstWord);
-transformer('Javascript is the best!', oneWord);
+transformer('Javascript is the best!', oneWord); */
 
 // ---- Value vs. Referece ----
 
