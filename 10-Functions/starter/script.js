@@ -1,8 +1,57 @@
 'use strict';
 
+// --- The call and apply Methods ---
+
+const lufthansa = {
+  airline: 'Lufthansa',
+  iatacode: 'LH',
+  bookings: [],
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.iatacode}${flightNum}`
+    );
+    this.bookings.push({ flight: `${this.iatacode}${flightNum}`, name });
+  },
+};
+
+lufthansa.book(12, 'Robert');
+lufthansa.book(239, 'Jonas Schmedtmann');
+console.log(lufthansa);
+
+const eurowings = {
+  airline: 'Eurowings',
+  iatacode: 'EW',
+  bookings: [],
+};
+
+const book = lufthansa.book;
+
+book.call(eurowings, 23, 'Sarah Williams');
+console.log(eurowings);
+
+book.call(lufthansa, 29, 'Mary Cooper');
+console.log(lufthansa);
+
+const swiss = {
+  airline: 'Swiss Air Lines',
+  iatacode: 'LX',
+  bookings: [],
+};
+
+book.call(swiss, 583, 'Katie Kirykowicz');
+console.log(swiss);
+
+const flightData = [583, 'George Cooper'];
+book.apply(swiss, flightData);
+
+console.log(swiss);
+
+book.call(eurowings, ...flightData);
+console.log(eurowings);
+
 // --- Functions returning Functions
 
-const greet = function (greeting) {
+/* const greet = function (greeting) {
   return function (name) {
     console.log(`${greeting} ${name}`);
   };
@@ -16,7 +65,7 @@ greet('Hello')('Robert');
 const greetArr = greeting => name => console.log(`${greeting} ${name}`);
 
 greetArr('Buongiorno')('Jose');
-
+ */
 // ----Functions Accepting Callback Functions ----
 
 /* const oneWord = function (str) {
