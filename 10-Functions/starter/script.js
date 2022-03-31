@@ -1,8 +1,19 @@
 'use strict';
 
+// --- Immediately Invoked Funtion Expressions ---
+
+const runOnce = function () {
+  console.log('this will never run again');
+};
+(function () {
+  console.log('this will never run again');
+})();
+
+(() => console.log('this will also never run again'))();
+
 // -- Coding Challenge #1 ---
 
-const poll = {
+/* const poll = {
   question: 'What is your favourite programming language?',
   options: ['0: JavaScript', '1: Python', '2: Rust', '3: C++'],
   //This generates [0, 0, 0, 0]. More in the next section!
@@ -35,7 +46,7 @@ const poll = {
 document
   .querySelector('.poll')
   .addEventListener('click', poll.registerNewAnswer.bind(poll));
-
+ */
 // --- The call and apply Methods, & the Bind Method  ---
 
 /* const lufthansa = {
