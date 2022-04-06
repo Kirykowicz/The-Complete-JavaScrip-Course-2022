@@ -1,8 +1,55 @@
 'use strict';
 
+// --- Regular vs Arrow Functions
+
+var firstName = 'Matilda';
+
+const jonas = {
+  firstName: 'Jonas',
+  year: 1991,
+  calcAge: function () {
+    console.log(this);
+    console.log(2037 - this.year);
+
+    // solution 1
+    // const self = this;
+    // const isMillenial = function () {
+    //   console.log(self.year >= 1981 && self.year <= 1996);
+    // };
+    // solution 2
+
+    const isMillenial = () => {
+      console.log(this);
+      console.log(this.year >= 1981 && this.year <= 1996);
+    };
+
+    isMillenial();
+  },
+  greet: () => console.log(`Hey ${this.firstName}`),
+};
+
+jonas.calcAge();
+jonas.greet();
+
+// arguments keyword
+
+const addExpr = function (a, b) {
+  console.log(arguments);
+  return a + b;
+};
+
+addExpr(2, 5);
+
+var addArrow = (a, b) => {
+  console.log(arguments);
+  return a + b;
+};
+
+addArrow(2, 4);
+
 // ---- The this keyword ----
 
-const calAge = function (birthyear) {
+/* const calAge = function (birthyear) {
   console.log(2037 - birthyear);
   console.log(this);
 };
@@ -32,7 +79,7 @@ jonas.calAge();
 
 matilda.calAge();
 
-const f = jonas.calAge;
+const f = jonas.calAge; */
 
 // ----Variable Environment: Hoisting and the TDZ
 
